@@ -7,7 +7,8 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 // TODO: Add Heartbeat Functionality - "hb" NetworkTableEntry
 // TODO: Add JavaDocs
-// Todo: Discuss "Unused" Warning Suppression
+// TODO: Discuss "Unused" Warning Suppression
+// TODO: Discuss Error Signalling With Default Values
 
 public class Limelight extends SubsystemBase {
     private final NetworkTable table;
