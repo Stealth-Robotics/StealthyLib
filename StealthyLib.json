@@ -9,7 +9,7 @@
   "jsonUrl": "https://raw.githubusercontent.com/Stealth-Robotics/StealthyLib/master/StealthyLib.json",
   "javaDependencies": [
     {
-      "groupId": "com.github.stealth-robotics",
+      "groupId": "com.github.Stealth-Robotics",
       "artifactId": "stealthy-lib",
       "version": "1.0-SNAPSHOT"
     }
