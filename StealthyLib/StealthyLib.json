@@ -1,0 +1,18 @@
+{
+  "fileName": "StealthyLib.json",
+  "name": "stealthy-lib",
+  "version": "1.0-SNAPSHOT",
+  "uuid": "18ce25f6-5d42-4ecb-8c17-557d9cf11652",
+  "mavenUrls": [
+  ],
+  "jsonUrl": "https://raw.githubusercontent.com/Stealth-Robotics/Stealthy-Lib/master/StealthLib.json",
+  "javaDependencies": [
+    {
+      "groupId": "org.stealthrobotics",
+      "artifactId": "stealthy-lib",
+      "version": "1.0-SNAPSHOT"
+    }
+  ],
+  "jniDependencies": [],
+  "cppDependencies": []
+}
