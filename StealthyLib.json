@@ -4,6 +4,7 @@
   "version": "1.0-SNAPSHOT",
   "uuid": "18ce25f6-5d42-4ecb-8c17-557d9cf11652",
   "mavenUrls": [
+    "https://jitpack.io"
   ],
   "jsonUrl": "https://raw.githubusercontent.com/Stealth-Robotics/Stealthy-Lib/master/StealthLib.json",
   "javaDependencies": [
