@@ -5,8 +5,8 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-// TODO: Add Heartbeat Functionality - "hb" NetworkTableEntry
-// TODO: Add JavaDocs
+// TODO: Add Limelight Heartbeat Functionality ("hb" NetworkTableEntry)
+// TODO: Add Limelight JavaDocs
 // TODO: Discuss "Unused" Warning Suppression
 // TODO: Discuss Error Signalling With Default Values
 
