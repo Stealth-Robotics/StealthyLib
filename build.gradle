@@ -26,14 +26,14 @@ dependencies {
     implementation 'edu.wpi.first.wpilibj:wpilibj-java:2022.4.1'
 
     // CTRE Implementation
-    implementation 'com.ctre.phoenix:api-java:5.21.3.0'
-    implementation 'com.ctre.phoenix:wpiapi-java:5.21.3.0'
+    implementation 'com.ctre.phoenix:api-java:5.21.4'
+    implementation 'com.ctre.phoenix:wpiapi-java:5.21.4'
 
     // REV Implementation
     implementation 'com.revrobotics.frc:REVLib-java:2022.1.0'
 
     // Path Planner Implementation
-    implementation 'com.github.mjansen4857:pathplanner:PathplannerLib-java:2023.0.1'
+    implementation 'com.pathplanner.lib:PathplannerLib-java:2023.0.1'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
