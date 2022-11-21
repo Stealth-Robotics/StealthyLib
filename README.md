@@ -26,6 +26,9 @@ https://3015rangerrobotics.github.io/pathplannerlib/PathplannerLib.json
 
 #### WPILib New Commands (Preinstalled By WPILib)
 This is already automatically installed by WPILib when a new project is created. Therefore, you shouldn't have to do install anything. But in case it is needed, here is the link:
+```
+https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/wpilibNewCommands/WPILibNewCommands.json
+```
 
 ### Stealthy Lib Installation
 Similarly to the libraries in the pre-installation instructions, Stealthy Lib has also been created as a vendor lib, simply use the link below with WPILib's `Manage Vendor Libraries -> Install New Libraries (Online)` tool, exactly like the libraries before.
