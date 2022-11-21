@@ -6,10 +6,10 @@
   "mavenUrls": [
     "https://jitpack.io"
   ],
-  "jsonUrl": "https://raw.githubusercontent.com/Stealth-Robotics/Stealthy-Lib/master/StealthLib.json",
+  "jsonUrl": "https://raw.githubusercontent.com/Stealth-Robotics/StealthyLib/master/StealthyLib.json",
   "javaDependencies": [
     {
-      "groupId": "org.stealthrobotics",
+      "groupId": "com.github.stealth-robotics",
       "artifactId": "stealthy-lib",
       "version": "1.0-SNAPSHOT"
     }
