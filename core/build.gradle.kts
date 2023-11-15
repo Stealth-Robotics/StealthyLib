@@ -2,7 +2,7 @@ plugins {
     id("java-library")
 }
 
-group = "org.stealthrobotics.stealthylib"
+group = "org.stealthrobotics.stealthylib.core"
 version = "1.0-SNAPSHOT"
 
 repositories {
