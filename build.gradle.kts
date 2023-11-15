@@ -1,19 +1,17 @@
-plugins {
-    id("java")
+buildscript {
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.1.3")
+    }
 }
 
-group = "org.stealthrobotics"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.9.1"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-}
-
-tasks.test {
-    useJUnitPlatform()
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
