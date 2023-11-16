@@ -4,7 +4,7 @@ package org.stealthrobotics.stealthylib.core.controllers;
  * A class containing various configs for controllers.
  */
 
-public class ControllerConfigs {
+public abstract class ControllerConfigs {
 
     /**
      * A config for a bang-bang controller.
