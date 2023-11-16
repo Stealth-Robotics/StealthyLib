@@ -15,7 +15,7 @@ package org.stealthrobotics.stealthylib.core.controllers;
 public class PIDFController {
 
     private double kP, kI, kD, kF;
-    private double setPoint;
+    private double setpoint;
     private double measuredValue;
     private double minIntegral, maxIntegral;
 
@@ -77,7 +77,7 @@ public class PIDFController {
         setTolerance(config.positionTolerance, config.velocityTolerance);
         setIntegrationBounds(config.minIntegral, config.maxIntegral);
 
-        setPoint = 0;
+        setpoint = 0;
         measuredValue = 0;
 
         errorVal_p = 0;
@@ -124,8 +124,8 @@ public class PIDFController {
      *
      * @return The current setpoint.
      */
-    public double getSetPoint() {
-        return setPoint;
+    public double getSetpoint() {
+        return setpoint;
     }
 
     /**
@@ -133,9 +133,9 @@ public class PIDFController {
      *
      * @param sp The desired setpoint.
      */
-    public void setSetPoint(double sp) {
-        setPoint = sp;
-        errorVal_p = setPoint - measuredValue;
+    public void setSetpoint(double sp) {
+        setpoint = sp;
+        errorVal_p = setpoint - measuredValue;
         errorVal_v = (errorVal_p - prevErrorVal) / period;
     }
 
@@ -198,7 +198,7 @@ public class PIDFController {
      */
     public double calculate(double pv, double sp) {
         // set the setpoint to the provided value
-        setSetPoint(sp);
+        setSetpoint(sp);
         return calculate(pv);
     }
 
@@ -217,9 +217,9 @@ public class PIDFController {
         lastTimeStamp = currentTimeStamp;
 
         if (measuredValue == pv) {
-            errorVal_p = setPoint - measuredValue;
+            errorVal_p = setpoint - measuredValue;
         } else {
-            errorVal_p = setPoint - pv;
+            errorVal_p = setpoint - pv;
             measuredValue = pv;
         }
 
@@ -233,11 +233,11 @@ public class PIDFController {
         if total error is the integral from 0 to t of e(t')dt', and
         e(t) = sp - pv, then the total error, E(t), equals sp*t - pv*t.
          */
-        totalError += period * (setPoint - measuredValue);
+        totalError += period * (setpoint - measuredValue);
         totalError = totalError < minIntegral ? minIntegral : Math.min(maxIntegral, totalError);
 
         // returns u(t)
-        return kP * errorVal_p + kI * totalError + kD * errorVal_v + kF * setPoint;
+        return kP * errorVal_p + kI * totalError + kD * errorVal_v + kF * setpoint;
     }
 
     public void setPIDF(double kp, double ki, double kd, double kf) {
