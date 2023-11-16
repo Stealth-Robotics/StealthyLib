@@ -7,6 +7,78 @@ package org.stealthrobotics.stealthylib.core.controllers;
 public abstract class ControllerConfigs {
 
     /**
+     * A config for a simple elevator feedforward.
+     */
+
+    public static class ElevatorFeedforwardConfig {
+        public double ks;
+        public double kg;
+        public double kv;
+        public double ka;
+
+        public ElevatorFeedforwardConfig() {
+            this.ks = 0;
+            this.kg = 0;
+            this.kv = 0;
+            this.ka = 0;
+        }
+
+        public ElevatorFeedforwardConfig(double ks, double kg, double kv, double ka) {
+            this.ks = ks;
+            this.kg = kg;
+            this.kv = kv;
+            this.ka = ka;
+        }
+    }
+
+    /**
+     * A config for a simple arm feedforward.
+     */
+
+    public static class ArmFeedforwardConfig {
+        public double ks;
+        public double kcos;
+        public double kv;
+        public double ka;
+
+        public ArmFeedforwardConfig() {
+            this.ks = 0;
+            this.kcos = 0;
+            this.kv = 0;
+            this.ka = 0;
+        }
+
+        public ArmFeedforwardConfig(double ks, double kcos, double kv, double ka) {
+            this.ks = ks;
+            this.kcos = kcos;
+            this.kv = kv;
+            this.ka = ka;
+        }
+    }
+
+    /**
+     * A config for a simple motor feedforward.
+     */
+
+    public static class SimpleMotorFeedforwardConfig {
+        public double ks;
+        public double kv;
+        public double ka;
+
+        public SimpleMotorFeedforwardConfig() {
+            this.ks = 0;
+            this.kv = 0;
+            this.ka = 0;
+        }
+
+        public SimpleMotorFeedforwardConfig(double ks, double kv, double ka) {
+            this.ks = ks;
+            this.kv = kv;
+            this.ka = ka;
+        }
+    }
+
+    /**
      * A config for a bang-bang controller.
      */
 
