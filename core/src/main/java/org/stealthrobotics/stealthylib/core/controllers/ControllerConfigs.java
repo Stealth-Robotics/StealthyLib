@@ -7,6 +7,22 @@ package org.stealthrobotics.stealthylib.core.controllers;
 public class ControllerConfigs {
 
     /**
+     * A config for a bang-bang controller.
+     */
+
+    public static class BangBangControllerConfig {
+        public double tolerance;
+
+        public BangBangControllerConfig() {
+            this.tolerance = Double.POSITIVE_INFINITY;
+        }
+
+        public BangBangControllerConfig(double tolerance) {
+            this.tolerance = tolerance;
+        }
+    }
+
+    /**
      * A config for a PIDF controller.
      */
 
@@ -20,7 +36,7 @@ public class ControllerConfigs {
         public double positionTolerance;
         public double velocityTolerance;
 
-        public PIDFControllerConfig(){
+        public PIDFControllerConfig() {
             this.kP = 0;
             this.kI = 0;
             this.kD = 0;
@@ -31,7 +47,7 @@ public class ControllerConfigs {
             this.velocityTolerance = Double.POSITIVE_INFINITY;
         }
 
-        public PIDFControllerConfig(double kP, double kI, double kD, double kF){
+        public PIDFControllerConfig(double kP, double kI, double kD, double kF) {
             this.kP = kP;
             this.kI = kI;
             this.kD = kD;
@@ -42,7 +58,7 @@ public class ControllerConfigs {
             this.velocityTolerance = 0;
         }
 
-        public PIDFControllerConfig(double kP, double kI, double kD, double kF, double minIntegral, double maxIntegral, double positionTolerance, double velocityTolerance){
+        public PIDFControllerConfig(double kP, double kI, double kD, double kF, double minIntegral, double maxIntegral, double positionTolerance, double velocityTolerance) {
             this.kP = kP;
             this.kI = kI;
             this.kD = kD;
@@ -59,15 +75,15 @@ public class ControllerConfigs {
      */
 
     public static class PIDControllerConfig extends PIDFControllerConfig {
-        public PIDControllerConfig(){
+        public PIDControllerConfig() {
             super();
         }
 
-        public PIDControllerConfig(double kP, double kI, double kD){
+        public PIDControllerConfig(double kP, double kI, double kD) {
             super(kP, kI, kD, 0);
         }
 
-        public PIDControllerConfig(double kP, double kI, double kD, double minIntegral, double maxIntegral, double positionTolerance, double velocityTolerance){
+        public PIDControllerConfig(double kP, double kI, double kD, double minIntegral, double maxIntegral, double positionTolerance, double velocityTolerance) {
             super(kP, kI, kD, 0, minIntegral, maxIntegral, positionTolerance, velocityTolerance);
         }
     }
@@ -77,15 +93,15 @@ public class ControllerConfigs {
      */
 
     public static class PDControllerConfig extends PIDControllerConfig {
-        public PDControllerConfig(){
+        public PDControllerConfig() {
             super();
         }
 
-        public PDControllerConfig(double kP, double kD){
+        public PDControllerConfig(double kP, double kD) {
             super(kP, 0, kD);
         }
 
-        public PDControllerConfig(double kP, double kD, double positionTolerance, double velocityTolerance){
+        public PDControllerConfig(double kP, double kD, double positionTolerance, double velocityTolerance) {
             super(kP, 0, kD, -1, 1, positionTolerance, velocityTolerance);
         }
     }
@@ -95,15 +111,15 @@ public class ControllerConfigs {
      */
 
     public static class PControllerConfig extends PDControllerConfig {
-        public PControllerConfig(){
+        public PControllerConfig() {
             super();
         }
 
-        public PControllerConfig(double kP){
+        public PControllerConfig(double kP) {
             super(kP, 0);
         }
 
-        public PControllerConfig(double kP, double positionTolerance){
+        public PControllerConfig(double kP, double positionTolerance) {
             super(kP, 0, positionTolerance, Double.POSITIVE_INFINITY);
         }
     }
