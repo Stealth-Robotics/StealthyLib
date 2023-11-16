@@ -31,40 +31,67 @@ public class PIDFController {
     private double lastTimeStamp;
     private double period;
 
+
     /**
-     * The base constructor for the PIDF controller
+     * Creates a new PIDFController with the given coefficients.
+     *
+     * @param kp The proportional coefficient.
+     * @param ki The integral coefficient.
+     * @param kd The derivative coefficient.
+     * @param kf The feedforward coefficient.
      */
+
     public PIDFController(double kp, double ki, double kd, double kf) {
-        this(kp, ki, kd, kf, 0, 0);
+        this(new ControllerConfigs.PIDFControllerConfig(kp, ki, kd, kf));
     }
 
     /**
-     * This is the full constructor for the PIDF controller. Our PIDF controller
-     * includes a feed-forward value which is useful for fighting friction and gravity.
-     * Our errorVal represents the return of e(t) and prevErrorVal is the previous error.
+     * Creates a new PIDFController with the given coefficients.
      *
-     * @param sp The setpoint of the pid control loop.
-     * @param pv The measured value of the pid control loop. We want sp = pv, or to the degree
-     *           such that sp - pv, or e(t) < tolerance.
+     * @param kp The proportional coefficient.
+     * @param ki The integral coefficient.
+     * @param kd The derivative coefficient.
+     * @param kf The feedforward coefficient.
+     * @param minIntegral The minimum value of the integral.
+     * @param maxIntegral The maximum value of the integral.
+     * @param positionTolerance The position error which is tolerable.
+     * @param velocityTolerance The velocity error which is tolerable.
      */
-    public PIDFController(double kp, double ki, double kd, double kf, double sp, double pv) {
-        kP = kp;
-        kI = ki;
-        kD = kd;
-        kF = kf;
 
-        setPoint = sp;
-        measuredValue = pv;
+    public PIDFController(double kp, double ki, double kd, double kf, double minIntegral, double maxIntegral, double positionTolerance, double velocityTolerance) {
+        this(new ControllerConfigs.PIDFControllerConfig(kp, ki, kd, kf, minIntegral, maxIntegral, positionTolerance, velocityTolerance));
+    }
 
-        minIntegral = -1.0;
-        maxIntegral = 1.0;
+    /**
+     * Creates a new PIDFController with the given config.
+     *
+     * @param config The configuration for the PIDFController.
+     */
+
+    public PIDFController(ControllerConfigs.PIDFControllerConfig config) {
+        setP(config.kP);
+        setI(config.kI);
+        setD(config.kD);
+        setF(config.kF);
+
+        setTolerance(config.positionTolerance, config.velocityTolerance);
+        setIntegrationBounds(config.minIntegral, config.maxIntegral);
+
+        setPoint = 0;
+        measuredValue = 0;
+
+        errorVal_p = 0;
+        errorVal_v = 0;
 
         lastTimeStamp = 0;
         period = 0;
 
-        errorVal_p = setPoint - measuredValue;
         reset();
     }
+
+    /**
+     * Resets the controller. This erases the integral of the errorVal over time.
+     */
 
     public void reset() {
         totalError = 0;

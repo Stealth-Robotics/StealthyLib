@@ -3,16 +3,33 @@ package org.stealthrobotics.stealthylib.core.controllers;
 public class PDController extends PIDController {
 
     /**
-     * Default constructor with just the coefficients
+     * Creates a PD controller with the given constants.
+     *
+     * @param kP The proportional constant.
+     * @param kD The derivative constant.
      */
-    public PDController(double kp, double kd) {
-        super(kp, 0, kd);
+    public PDController(double kP, double kD) {
+        this(new ControllerConfigs.PDControllerConfig(kP, kD));
     }
 
     /**
-     * The extended constructor.
+     * Creates a PD controller with the given constants.
+     *
+     * @param kP The proportional constant.
+     * @param kD The derivative constant.
+     * @param positionTolerance The position tolerance.
+     * @param velocityTolerance The velocity tolerance.
      */
-    public PDController(double kp, double kd, double sp, double pv) {
-        super(kp, 0, kd, sp, pv);
+    public PDController(double kP, double kD, double positionTolerance, double velocityTolerance) {
+        this(new ControllerConfigs.PDControllerConfig(kP, kD, positionTolerance, velocityTolerance));
+    }
+
+    /**
+     * Creates a PD controller with the given config.
+     *
+     * @param config The config.
+     */
+    public PDController(ControllerConfigs.PDControllerConfig config) {
+        super(config);
     }
 }

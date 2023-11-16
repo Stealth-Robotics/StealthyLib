@@ -3,19 +3,30 @@ package org.stealthrobotics.stealthylib.core.controllers;
 public class PController extends PDController {
 
     /**
-     * Default constructor, only takes a p-value.
+     * Creates a P controller with the given constants.
      *
-     * @param kp The value of kP for the coefficients.
+     * @param kP The proportional constant.
      */
-    public PController(double kp) {
-        super(kp, 0);
+    public PController(double kP) {
+        this(new ControllerConfigs.PControllerConfig(kP));
     }
 
     /**
-     * The extended constructor.
+     * Creates a P controller with the given constants.
+     *
+     * @param kP The proportional constant.
+     * @param positionTolerance The position tolerance.
      */
-    public PController(double kp, double sp, double pv) {
-        super(kp, 0, sp, pv);
+    public PController(double kP, double positionTolerance) {
+        this(new ControllerConfigs.PControllerConfig(kP, positionTolerance));
     }
 
+    /**
+     * Creates a P controller with the given config.
+     *
+     * @param config The config.
+     */
+    public PController(ControllerConfigs.PControllerConfig config) {
+        super(config);
+    }
 }

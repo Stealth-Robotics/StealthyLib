@@ -3,21 +3,38 @@ package org.stealthrobotics.stealthylib.core.controllers;
 public class PIDController extends PIDFController {
 
     /**
-     * Default constructor with just the coefficients
+     * Creates a PID controller with the given constants.
+     *
+     * @param kP The proportional constant.
+     * @param kI The integral constant.
+     * @param kD The derivative constant.
      */
-    public PIDController(double kp, double ki, double kd) {
-        super(kp, ki, kd, 0);
+
+    public PIDController(double kP, double kI, double kD) {
+       this(new ControllerConfigs.PIDControllerConfig(kP, kI, kD));
     }
 
     /**
-     * The extended constructor.
+     * Creates a PID controller with the given constants.
+     *
+     * @param kP The proportional constant.
+     * @param kI The integral constant.
+     * @param kD The derivative constant.
+     * @param minIntegral The minimum integral value.
+     * @param maxIntegral The maximum integral value.
      */
-    public PIDController(double kp, double ki, double kd, double sp, double pv) {
-        super(kp, ki, kd, 0, sp, pv);
+
+    public PIDController(double kP, double kI, double kD, double minIntegral, double maxIntegral, double positionTolerance, double velocityTolerance) {
+        this(new ControllerConfigs.PIDControllerConfig(kP, kI, kD, minIntegral, maxIntegral, positionTolerance, velocityTolerance));
     }
 
-    public void setPID(double kp, double ki, double kd) {
-        setPIDF(kp, ki, kd, 0);
-    }
+    /**
+     * Creates a PID controller with the given config.
+     *
+     * @param config The config.
+     */
 
+    public PIDController(ControllerConfigs.PIDControllerConfig config) {
+        super(config);
+    }
 }
