@@ -25,6 +25,10 @@ repositories {
         url = uri("https://maven.revrobotics.com/")
     }
 
+    // PathPlanner
+    maven {
+        url = uri("https://3015rangerrobotics.github.io/pathplannerlib/repo")
+    }
 }
 
 dependencies {
@@ -53,8 +57,8 @@ dependencies {
     // REV Lib (Vendor Lib)
     implementation("com.revrobotics.frc:REVLib-java:2023.1.3")
 
-    // Pathplanner (Vendor Lib)
-    implementation("com.pathplanner.lib.PathplannerLib-java:2024.0.0-beta-5.1")
+    // Path Planner (Vendor Lib)
+    implementation("com.pathplanner.lib:PathplannerLib-java:2024.0.0-beta-5.1")
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
