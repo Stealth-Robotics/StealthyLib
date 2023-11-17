@@ -1,8 +1,9 @@
 # Stealthy Lib
 
+![Core Module Build](https://github.com/Stealth-Robotics/StealthyLib/actions/workflows/build-core.yml/badge.svg)
+![FRC Module Build](https://github.com/Stealth-Robotics/StealthyLib/actions/workflows/build-frc.yml/badge.svg)
+![Core FTC Build](https://github.com/Stealth-Robotics/StealthyLib/actions/workflows/build-ftc.yml/badge.svg)<br>
 [![](https://jitpack.io/v/Stealth-Robotics/StealthyLib.svg)](https://jitpack.io/#Stealth-Robotics/StealthyLib)
-
----
 
 Stealthy Lib is a library created, mantained, and used by Cedarcrest High School's FIRST Team, which includes:
 
