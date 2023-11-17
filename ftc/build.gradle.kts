@@ -2,6 +2,9 @@ plugins {
     id("com.android.library")
 }
 
+group = "org.stealthrobotics.stealthylib.ftc"
+version = "0.1.0-beta"
+
 android {
     namespace = "org.stealthrobotics.stealthylib.ftc"
     compileSdk = 34
@@ -22,6 +25,13 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
 }
 

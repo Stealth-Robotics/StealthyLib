@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "org.stealthrobotics.stealthylib.core"
-version = "1.0-SNAPSHOT"
+version = "0.1.0-beta"
 
 repositories {
     mavenCentral()
@@ -18,18 +18,15 @@ tasks.test {
     useJUnitPlatform()
 }
 
-java {
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+
+configure<JavaPluginExtension> {
+
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 
     withSourcesJar()
     withJavadocJar()
-}
-
-tasks.withType<JavaCompile> {
-    options.encoding = "UTF-8"
-}
-
-tasks.named("javadocJar") {
-    dependsOn("javadoc")
 }

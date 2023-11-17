@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "org.stealthrobotics.stealthylib.frc"
-version = "1.0-SNAPSHOT"
+version = "0.1.0-beta"
 
 repositories {
     mavenCentral()
@@ -80,6 +80,11 @@ tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
 
-tasks.named("javadocJar") {
-    dependsOn("javadoc")
+configure<JavaPluginExtension> {
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    withSourcesJar()
+    withJavadocJar()
 }

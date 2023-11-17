@@ -15,3 +15,43 @@ allprojects {
         mavenCentral()
     }
 }
+
+subprojects {
+    apply(plugin = "maven-publish")
+
+    repositories() {
+        mavenLocal()
+    }
+
+    tasks {
+        withType<Jar> {
+            enabled = true
+        }
+    }
+
+    afterEvaluate {
+        if (project.hasProperty("android"))
+        {
+            project.configure<PublishingExtension> {
+                publications {
+                    findByName("release")?.let { releasePublication ->
+                        add(releasePublication)
+                    }
+                }
+            }
+        }
+        else {
+            configure<PublishingExtension> {
+                publications {
+                    create<MavenPublication>("maven") {
+                        groupId = project.group.toString()
+                        artifactId = project.name
+                        version = project.version.toString()
+
+                        from(components["java"])
+                    }
+                }
+            }
+        }
+    }
+}
