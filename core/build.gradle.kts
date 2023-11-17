@@ -2,7 +2,7 @@ plugins {
     id("java-library")
 }
 
-group = "org.stealthrobotics.stealthylib.core"
+group = "org.stealthrobotics.stealthylib"
 version = "0.1.0-beta"
 
 repositories {
@@ -24,8 +24,8 @@ tasks.withType<JavaCompile> {
 
 configure<JavaPluginExtension> {
 
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
     withSourcesJar()
     withJavadocJar()

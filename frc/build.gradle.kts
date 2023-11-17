@@ -4,7 +4,7 @@ plugins {
 
 }
 
-group = "org.stealthrobotics.stealthylib.frc"
+group = "org.stealthrobotics.stealthylib"
 version = "0.1.0-beta"
 
 repositories {
@@ -69,8 +69,8 @@ tasks.test {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
     withSourcesJar()
     withJavadocJar()
@@ -78,13 +78,4 @@ java {
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
-}
-
-configure<JavaPluginExtension> {
-
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-
-    withSourcesJar()
-    withJavadocJar()
 }
