@@ -30,17 +30,8 @@ subprojects {
     }
 
     afterEvaluate {
-        if (project.hasProperty("android"))
+        if (!project.hasProperty("android"))
         {
-            project.configure<PublishingExtension> {
-                publications {
-                    findByName("release")?.let { releasePublication ->
-                        add(releasePublication)
-                    }
-                }
-            }
-        }
-        else {
             configure<PublishingExtension> {
                 publications {
                     create<MavenPublication>("maven") {
