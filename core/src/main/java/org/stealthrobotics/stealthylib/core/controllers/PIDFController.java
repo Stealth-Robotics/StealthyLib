@@ -1,5 +1,15 @@
 package org.stealthrobotics.stealthylib.core.controllers;
 
+/*----------------------------------------------------------------------------*/
+/* Copied from FTCLib and modified to use StealthyLib's controller config     */
+/* system.                                                                    */
+/*                                                                            */
+/* Original source:                                                           */
+/* https://github.com/FTCLib/FTCLib/blob/1c8995d09413b406e0f4aff238e          */
+/* a4edc2bb860c4/core/src/main/java/com/arcrobotics/ftclib/controller/        */
+/* PIDFController.java                                                        */
+/*----------------------------------------------------------------------------*/
+
 /**
  * This is a PID controller (https://en.wikipedia.org/wiki/PID_controller)
  * for your robot. Internally, it performs all the calculations for you.

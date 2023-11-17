@@ -1,5 +1,22 @@
 package org.stealthrobotics.stealthylib.core.controllers;
 
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) FIRST and other WPILib contributors.                         */
+/*                                                                            */
+/* Open Source Software; you can modify and/or share it under the terms of    */
+/* the WPILib BSD license file located in the root directory of this project. */
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* Copied from WPILib and modified to use StealthyLib's controller config     */
+/* system.                                                                    */
+/*                                                                            */
+/* Original source:                                                           */
+/* https://github.com/wpilibsuite/allwpilib/blob/da3ec1be1077b180d1f730fc4ed7 */
+/* 033720d8d78d/wpimath/src/main/java/edu/wpi/first/math/controller/          */
+/* ArmFeedforward.java                                                        */
+/*----------------------------------------------------------------------------*/
+
 /**
  * A helper class that computes feedforward outputs for a simple arm (modeled as a motor
  * acting against the force of gravity on a beam suspended at an angle).

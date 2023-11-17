@@ -1,8 +1,21 @@
 package org.stealthrobotics.stealthylib.core.controllers;
 
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) FIRST and other WPILib contributors.                         */
+/*                                                                            */
+/* Open Source Software; you can modify and/or share it under the terms of    */
+/* the WPILib BSD license file located in the root directory of this project. */
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* Copied from WPILIB and modified to use StealthyLib's controller config     */
+/* system.                                                                    */
+/*                                                                            */
+/* Original source:                                                           */
+/* https://github.com/wpilibsuite/allwpilib/blob/cfbff32185ed0340cac5e22012a9 */
+/* cffee15507be/wpimath/src/main/java/edu/wpi/first/math/controller/          */
+/* BangBangController.java                                                    */
+/*----------------------------------------------------------------------------*/
 
 /**
  * Implements a bang-bang controller, which outputs either 0 or 1 depending on whether the
