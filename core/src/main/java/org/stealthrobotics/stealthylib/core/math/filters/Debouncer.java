@@ -7,6 +7,22 @@
 
 package org.stealthrobotics.stealthylib.core.math.filters;
 
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) FIRST and other WPILib contributors.                         */
+/*                                                                            */
+/* Open Source Software; you can modify and/or share it under the terms of    */
+/* the WPILib BSD license file located in the root directory of this project. */
+/*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*/
+/* Copied from WPILIB and modified to remove dependencies on WPIUtilJNI       */
+/*                                                                            */
+/* Original source:                                                           */
+/* https://raw.githubusercontent.com/wpilibsuite/allwpilib/                   */
+/* aa9dfabde2fdaf32541697de2159878faa801fa1/wpimath/src/main/java/            */
+/* edu/wpi/first/math/filter/Debouncer.java                                   */
+/*----------------------------------------------------------------------------*/
+
 /**
  * A simple debounce filter for boolean streams. Requires that the boolean change value from
  * baseline for a specified period of time before the filtered value changes.
