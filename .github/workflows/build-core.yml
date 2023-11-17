@@ -22,7 +22,14 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
 
-    - name: Build Core Module
-      run: |
-        cd core
-        ./gradlew build
+    - name: Navigate to Core Module
+      run: cd core
+
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Execute Gradle build
+      run: ./gradlew build
