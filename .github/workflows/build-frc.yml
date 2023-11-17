@@ -1,4 +1,4 @@
-name: Build Core Module
+name: Build FRC Module
 
 on:
   push:
