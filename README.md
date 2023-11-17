@@ -86,6 +86,18 @@ Please make sure you are using the correct modules for your codebase.
     ```
  8. Perform a Gradle sync your project. You should now be able to use the library in your project files (inside `TeamCode`)!
 
+__NOTE:__ If your module has a few dependencies, you might have an error related to multidex on building the project. This is caused by the project exceeding the limit for imports enforced by Android Studio. To solve this, add `multiDexEnabled true` to the below location inside the `build.common.gradle` file.
+
+```groovy
+defaultConfig {
+    applicationId 'com.qualcomm.ftcrobotcontroller'
+    minSdkVersion 24
+    targetSdkVersion 28
+    
+    multiDexEnabled true
+}
+```
+
 ### FRC Installation
 Open your FRC project in VSCode, and follow the instructions below.
 
