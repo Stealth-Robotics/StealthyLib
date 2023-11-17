@@ -54,6 +54,8 @@ dependencies {
     implementation("com.ctre.phoenix:api-java:5.31.0")
     implementation("com.ctre.phoenix:wpiapi-java:5.31.0")
 
+    implementation("com.ctre.phoenix6:wpiapi-java:24.0.0-beta-2")
+
     // REV Lib (Vendor Lib)
     implementation("com.revrobotics.frc:REVLib-java:2023.1.3")
 
