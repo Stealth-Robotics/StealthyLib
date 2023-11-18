@@ -6,6 +6,10 @@ package org.stealthrobotics.stealthylib.core.controllers;
 
 public abstract class ControllerConfigs {
 
+    private ControllerConfigs() {
+        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated.");
+    }
+
     /**
      * A config for a simple elevator feedforward.
      */
