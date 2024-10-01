@@ -42,7 +42,7 @@ Please make sure you are using the correct modules for your codebase.
 
 1.  Open your FTC SDK project in Android Studio.
 2.  Open `build.common.gradle` file of your project.
-3.  Scroll to the bottom where you should find a `dependencies` block. Here add the following to the `dependencies` block:
+3.  Scroll to the bottom where you should find a `repositories` block. Here add the following to the `repositories` block:
     ```groovy
     maven { url 'https://jitpack.io' }
     ```
