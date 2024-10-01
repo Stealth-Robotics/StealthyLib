@@ -60,8 +60,8 @@ Please make sure you are using the correct modules for your codebase.
     dependencies {
       implementation '...' // example of an already existing dependencies
 
-      implementation 'com.github.Stealth-Robotics.StealthyLib:core:v0.1.0-beta' // core lib
-      implementation 'com.github.Stealth-Robotics.StealthyLib:ftc:v0.1.0-beta' // ftc lib
+      implementation 'com.github.Stealth-Robotics.StealthyLib:core:v1.0.0' // core lib
+      implementation 'com.github.Stealth-Robotics.StealthyLib:ftc:v1.0.0' // ftc lib
     }
     ```
 
