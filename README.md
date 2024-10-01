@@ -50,8 +50,8 @@ Please make sure you are using the correct modules for your codebase.
 5.  Go to the bottom of the file, and add the following to the `dependencies` block.
 
     ```groovy
-    implementation 'com.github.Stealth-Robotics.StealthyLib:core:v0.1.0-beta' // core lib
-    implementation 'com.github.Stealth-Robotics.StealthyLib:ftc:v0.1.0-beta' // ftc lib
+    implementation 'com.github.Stealth-Robotics.StealthyLib:core:v1.0.0' // core lib
+    implementation 'com.github.Stealth-Robotics.StealthyLib:ftc:v1.0.0' // ftc lib
     ```
 
     Add the line under already existing dependencies if the `dependencies` block already exists. If it doesn't exist, you can create one similar to what is shown below. It should look something like this:
